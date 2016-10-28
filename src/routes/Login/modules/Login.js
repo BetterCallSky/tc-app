@@ -11,8 +11,8 @@ import APIService from 'services/APIService';
 // ------------------------------------
 
 
-export const login = (handle) => async (dispatch) => {
-  await APIService.fetchChallenges(handle);
+export const login = (handle) => (dispatch) => {
+  APIService.fetchChallenges(handle);
   localStorage.handle = handle;
   dispatch(push('/dashboard'));
 };

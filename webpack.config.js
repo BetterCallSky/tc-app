@@ -88,7 +88,7 @@ module.exports = {
   output: {
     filename: '[name].[hash].js',
     path: path.join(__dirname, './dist'),
-    publicPath: __DEV__ ? `http://${ip.address()}:${config.PORT}/` : '',
+    publicPath: __DEV__ ? `http://${ip.address()}:${config.PORT}/` : '/',
   },
   plugins: [
     new webpack.DefinePlugin({

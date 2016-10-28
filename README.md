@@ -1,5 +1,7 @@
 ## Topcoder dashboard
 
+Live url [tc-dashboard.com](http://tc-dashboard.com)
+
 ## Requirements
 * node v6 (https://nodejs.org)
 

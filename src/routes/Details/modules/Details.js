@@ -1,27 +1,30 @@
 import { handleActions } from 'redux-actions';
-import { push } from 'react-router-redux';
 import APIService from 'services/APIService';
 
 // ------------------------------------
 // Constants
 // ------------------------------------
+export const LOADED = 'Details/LOADED';
 
 // ------------------------------------
 // Actions
 // ------------------------------------
 
 
-export const login = (handle) => async (dispatch) => {
-  await APIService.fetchChallenges(handle);
-  localStorage.handle = handle;
-  dispatch(push('/dashboard'));
+export const load = (id) => async(dispatch, getState) => {
+  const challenge = await APIService.getChallenge(id);
+  dispatch({ type: LOADED, payload: challenge });
 };
 
 export const actions = {
-  login,
+  load,
 };
 
 // ------------------------------------
 // Reducer
 // ------------------------------------
-export default handleActions({}, {});
+export default handleActions({
+  [LOADED]: (state, { payload: challenge }) => ({ ...state, challenge }),
+}, {
+  challenge: null,
+});

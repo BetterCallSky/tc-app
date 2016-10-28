@@ -11,4 +11,17 @@ export default class APIService {
       .end()
       .then((res) => res.body);
   }
+
+  static fetchChallenges(handle) {
+    return request
+      .post(`/api/users/${handle}/challenges`)
+      .end();
+  }
+
+  static getChallenge(id) {
+    return request
+      .get(`/api/challenges/${id}`)
+      .end()
+      .then((res) => res.body);
+  }
 }

@@ -1,4 +1,4 @@
-## DRONE APP
+## Topcoder dashboard
 
 ## Requirements
 * node v6 (https://nodejs.org)
@@ -10,8 +10,7 @@ See Guild https://github.com/lorenwest/node-config/wiki/Configuration-Files
 |Name|Description|
 |----|-----------|
 |`PORT`| The port to listen|
-|`API_URL`| The drone API url|
-|`GOOGLE_API_KEY`| The google api key see (https://developers.google.com/maps/documentation/javascript/get-api-key#key)|
+|`API_URL`| The url for Topcoder Dasbhoard API|
 
 ## Install dependencies
 `npm i`

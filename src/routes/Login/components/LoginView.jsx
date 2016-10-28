@@ -6,7 +6,7 @@ class LoginView extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { handle: '' };
+    this.state = { handle: '', isLoading: false, };
   }
 
   render() {
@@ -16,6 +16,7 @@ class LoginView extends React.Component {
         <Form
           onSubmit={(e) => {
             e.preventDefault();
+            this.setState({isLoading: true});
             login(this.state.handle);
           }}
         >
@@ -31,7 +32,7 @@ class LoginView extends React.Component {
               placeholder="Enter your topcoder handle (case sensitive)"
             />
           </FormGroup>
-          <Button block color="primary">Log in</Button>
+          <Button block color="primary" disabled={this.state.isLoading}>Log in</Button>
         </Form>
       </div>
     );

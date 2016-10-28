@@ -11,7 +11,7 @@
     "lint:fix": "npm run lint -- --fix"
   },
   "author": "",
-  "license": "UNLICENCED",
+  "license": "GPL-3.0",
   "dependencies": {
     "autoprefixer": "^6.5.0",
     "babel-core": "^6.17.0",

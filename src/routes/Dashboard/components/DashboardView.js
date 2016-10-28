@@ -45,7 +45,7 @@ export const DashboardView = ({ activeChallenges, pastChallenges, isLoading, loa
               </thead>
               <tbody>
               {activeChallenges.map((item) =>
-                <tr className={cn({'table-success': hasSubmitted(item)})}>
+                <tr key={item.id} className={cn({'table-success': hasSubmitted(item)})}>
                   <td>
                     <Link to={`/challenge/${item.id}`}>
                       {item.challengeName}
@@ -55,7 +55,7 @@ export const DashboardView = ({ activeChallenges, pastChallenges, isLoading, loa
                     {' '}
                     {item.event && <Tag color="info">{item.event.shortDescription}</Tag>}
                     <br />
-                    {item.technology.map((tech) => <span><Tag>{tech}</Tag> </span>)}
+                    {item.technology.map((tech, i) => <span key={i}><Tag>{tech}</Tag> </span>)}
                   </td>
                   <td>{item.prize.map((prize) => `$${prize}`).join(' / ')}</td>
                   <td>{item.currentPhaseName}</td>
@@ -103,7 +103,7 @@ export const DashboardView = ({ activeChallenges, pastChallenges, isLoading, loa
               </thead>
               <tbody>
               {pastChallenges.map((item) =>
-                <tr className={cn({'table-success': hasSubmitted(item)})}>
+                <tr key={item.id} className={cn({'table-success': hasSubmitted(item)})}>
                   <td>
                     <Link to={`/challenge/${item.id}`}>
                       {item.challengeName}

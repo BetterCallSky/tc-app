@@ -1,5 +1,7 @@
 ## Topcoder dashboard
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/BetterCallSky/tc-app.svg)](https://greenkeeper.io/)
+
 Live url [tc-dashboard.com](http://tc-dashboard.com)
 
 ## Requirements
